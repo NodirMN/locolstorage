@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.madal{
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    top: -1000px;
+}
+.madal.active{
+    top:10px
+}
+.madal input,
+.madal select{
+    display: block;
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+}
+.madal button{
+    background-color: green;
+    display: inline-block;
+    width: 120px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 0;
+    color: aliceblue;
+    margin-top: 10px;
+}

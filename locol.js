@@ -4,6 +4,7 @@ let sana = document.getElementById('sana')
 let otdel = document.getElementById('otdel')
 let persons = []
 let table = document.querySelector('table')
+let modal = document.getElementById('modal')
 
 if(localStorage.getItem('humans')){
     try {
@@ -18,11 +19,11 @@ function show(){
     let count = 1
     table.innerHTML = ` <thead>
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>N</th>
+                <th>Ism</th>
+                <th>Yosh</th>
+                <th>Tugilgan sana</th>
+                <th>Bo'lim</th>
             </tr>
             </thead>`
     for(let i=0;i<persons.length;i++){
@@ -40,6 +41,9 @@ function show(){
     }
 
 }
+function showModal(){
+    modal.classList.toggle('active')
+}
 
 function add(){
     const person ={
@@ -48,8 +52,13 @@ function add(){
         sana:sana.value,
         otdel:otdel.value,
     }
+    ism.value= ''
+    yosh.value= ''
+    sana.value= ''
+    otdel.value= ''
     persons.push(person)
     show()
+    showModal()
     let redy = JSON.stringify(persons)
     localStorage.setItem('humans', redy)
 }
